@@ -401,6 +401,159 @@
                 text-align: center;
             }
         }
+
+        /* Download Resume Button */
+        .download-btn svg {
+            stroke: white;
+        }
+        .download-btn:hover svg {
+            transform: translateY(3px);
+        }
+
+        /* Achievements/Stats Section */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 30px 20px;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.08), rgba(118, 75, 162, 0.08));
+            border: 1px solid rgba(102, 126, 234, 0.15);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+
+        body.light-mode .stat-card {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.12), rgba(118, 75, 162, 0.12));
+            border: 1px solid rgba(102, 126, 234, 0.2);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.2);
+        }
+
+        .stat-card h3 {
+            font-size: 2.5em;
+            font-weight: 700;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+        }
+
+        .stat-card p {
+            font-size: 14px;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        /* Technology Stack Section */
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .tech-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            padding: 15px;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .tech-item:hover {
+            background: rgba(102, 126, 234, 0.05);
+            transform: translateY(-3px);
+        }
+
+        .tech-logo {
+            width: 48px;
+            height: 48px;
+            filter: grayscale(100%);
+            opacity: 0.7;
+            transition: all 0.3s ease;
+        }
+
+        .tech-item:hover .tech-logo {
+            filter: grayscale(0%);
+            opacity: 1;
+            transform: scale(1.1);
+        }
+
+        .tech-item span {
+            font-size: 12px;
+            font-weight: 500;
+            color: var(--text-secondary);
+            text-align: center;
+        }
+
+        /* Fade-in Animation on Scroll */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Enhanced Project Card Hover */
+        .project-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        body.light-mode .project-card:hover {
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        @media (max-width: 768px) {
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+            }
+            
+            .tech-grid {
+                grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+                gap: 15px;
+            }
+            
+            .stat-card h3 {
+                font-size: 2em;
+            }
+            
+            .tech-logo {
+                width: 40px;
+                height: 40px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 <body>
@@ -450,15 +603,15 @@
           <div class="hello-content">
             <h2 class="hello-title">HELLO<span class="exclamation">!</span></h2>
             <p class="bio-text">
-              Hey there! I am a self-taught graphic designer and web developer
-              with a passion for creativity. I've mastered Alight Motion and
-              wield Photoshop, Lightroom, and Illustrator to bring ideas to
-              life. From logos to theme banners and modern web applications, I
-              craft designs and code with purpose and impact. Let's collaborate
-              and turn your vision into captivating visuals and functional
-              digital experiences!
+              Hey there! I'm Zeeshan Khan, a versatile web developer, graphic designer, and video editor with a passion for creating impactful digital experiences. I've trained 200+ students at MIT College and continue teaching at Programmers Point. With expertise spanning full-stack development (React, MERN, Node.js) to professional design tools (Photoshop, Illustrator, After Effects, Premiere Pro), I bring ideas to life through code and creativity. My YouTube channel has reached 2,000+ subscribers and 1.7M+ views. ICAT Certified with All India Rank #1279. Let's collaborate and create something amazing!
             </p>
             <div class="contact-buttons">
+              <a href="./Zeeshan_Khan_Resume_2025.pdf" download="Zeeshan_Khan_Resume.pdf" class="contact-btn download-btn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/>
+                </svg>
+                Download Resume
+              </a>
               <a href="mailto:zixshankhan@gmail.com" class="contact-btn">
                 <svg fill="currentColor" viewBox="0 0 24 24">
                   <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
@@ -474,11 +627,11 @@
                 </svg>
                 instagram.com/xnemesis_
               </a>
-              <a href="tel:6268719705" class="contact-btn">
+              <a href="tel:7440479719" class="contact-btn">
                 <svg fill="currentColor" viewBox="0 0 24 24">
                     <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
                 </svg>
-                (+91) 6268719705
+                (+91) 7440479719
               </a>
               <a href="https://youtube.com/@beyondxcanon" class="contact-btn">
                 <svg fill="currentColor" viewBox="0 0 24 24">
@@ -487,6 +640,114 @@
                 Beyond X Canon
               </a>
             </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-panel fade-in">
+        <h3 class="section-title">Achievements</h3>
+        <div class="stats-grid">
+          <div class="stat-card">
+            <h3>200+</h3>
+            <p>Students Trained</p>
+          </div>
+          <div class="stat-card">
+            <h3>1.7M+</h3>
+            <p>YouTube Views</p>
+          </div>
+          <div class="stat-card">
+            <h3>500+</h3>
+            <p>Videos Edited</p>
+          </div>
+          <div class="stat-card">
+            <h3>#1279</h3>
+            <p>ICAT All India Rank</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-panel fade-in">
+        <h3 class="section-title">Tech Stack</h3>
+        <div class="tech-grid">
+          <div class="tech-item">
+            <img src="https://cdn.simpleicons.org/react" alt="React" class="tech-logo" />
+            <span>React</span>
+          </div>
+          <div class="tech-item">
+            <img src="https://cdn.simpleicons.org/javascript" alt="JavaScript" class="tech-logo" />
+            <span>JavaScript</span>
+          </div>
+          <div class="tech-item">
+            <img src="https://cdn.simpleicons.org/nodedotjs" alt="Node.js" class="tech-logo" />
+            <span>Node.js</span>
+          </div>
+          <div class="tech-item">
+            <img src="https://cdn.simpleicons.org/mongodb" alt="MongoDB" class="tech-logo" />
+            <span>MongoDB</span>
+          </div>
+          <div class="tech-item">
+            <img src="https://cdn.simpleicons.org/firebase" alt="Firebase" class="tech-logo" />
+            <span>Firebase</span>
+          </div>
+          <div class="tech-item">
+            <img src="https://cdn.simpleicons.org/python" alt="Python" class="tech-logo" />
+            <span>Python</span>
+          </div>
+          <div class="tech-item">
+            <img src="https://cdn.simpleicons.org/java" alt="Java" class="tech-logo" />
+            <span>Java</span>
+          </div>
+          <div class="tech-item">
+            <img src="https://cdn.simpleicons.org/cplusplus" alt="C++" class="tech-logo" />
+            <span>C++</span>
+          </div>
+          <div class="tech-item">
+            <img src="https://cdn.simpleicons.org/mysql" alt="MySQL" class="tech-logo" />
+            <span>MySQL</span>
+          </div>
+          <div class="tech-item">
+            <img src="https://cdn.simpleicons.org/adobephotoshop" alt="Photoshop" class="tech-logo" />
+            <span>Photoshop</span>
+          </div>
+          <div class="tech-item">
+            <img src="https://cdn.simpleicons.org/adobeillustrator" alt="Illustrator" class="tech-logo" />
+            <span>Illustrator</span>
+          </div>
+          <div class="tech-item">
+            <img src="https://cdn.simpleicons.org/adobeaftereffects" alt="After Effects" class="tech-logo" />
+            <span>After Effects</span>
+          </div>
+          <div class="tech-item">
+            <img src="https://cdn.simpleicons.org/adobepremierepro" alt="Premiere Pro" class="tech-logo" />
+            <span>Premiere Pro</span>
+          </div>
+          <div class="tech-item">
+            <img src="https://cdn.simpleicons.org/blender" alt="Blender" class="tech-logo" />
+            <span>Blender</span>
+          </div>
+          <div class="tech-item">
+            <img src="https://cdn.simpleicons.org/canva" alt="Canva" class="tech-logo" />
+            <span>Canva</span>
+          </div>
+          <div class="tech-item">
+            <img src="https://cdn.simpleicons.org/tailwindcss" alt="Tailwind CSS" class="tech-logo" />
+            <span>Tailwind</span>
+          </div>
+          <div class="tech-item">
+            <img src="https://cdn.simpleicons.org/bootstrap" alt="Bootstrap" class="tech-logo" />
+            <span>Bootstrap</span>
+          </div>
+          <div class="tech-item">
+            <img src="https://cdn.simpleicons.org/mui" alt="Material UI" class="tech-logo" />
+            <span>Material UI</span>
+          </div>
+          <div class="tech-item">
+            <img src="https://cdn.simpleicons.org/jquery" alt="jQuery" class="tech-logo" />
+            <span>jQuery</span>
+          </div>
+          <div class="tech-item">
+            <img src="https://cdn.simpleicons.org/sass" alt="SCSS" class="tech-logo" />
+            <span>SCSS</span>
           </div>
         </div>
       </div>
@@ -502,15 +763,32 @@
         <div class="grid-item">
           <h3 class="section-title">Experience</h3>
           <div class="experience-item">
-            <div class="experience-year">2025 - Present</div>
-            <div class="experience-title">Content Creator
-              <span class="youtube-highlight">1.2K+ Subscribers</span>
-            </div>
-            <div class="experience-company">Beyond X Canon YouTube Channel</div>
+            <div class="experience-year">Aug 2025 – Nov 2025</div>
+            <div class="experience-title">Trainer</div>
+            <div class="experience-company">MIT College, Ujjain – Trained 200+ students in C, C++, Java, MySQL, programming logic, and presentation skills</div>
           </div>
-          <div class="experience-item"><div class="experience-year">2024 - Present</div><div class="experience-title">Video Editor & Social Media Manager</div><div class="experience-company">Programmers College (400k+ YouTube views)</div></div>
-          <div class="experience-item"><div class="experience-year">2024 - Present</div><div class="experience-title">Trainer</div><div class="experience-company">Programmers Point (Communication, Programming, Logic Building)</div></div>
-          <div class="experience-item"><div class="experience-year">2021 - 2023</div><div class="experience-title">Freelancer Designer</div><div class="experience-company">PGTV LLC (Logos, Banners)</div></div>
+          <div class="experience-item">
+            <div class="experience-year">Jan 2024 - Present</div>
+            <div class="experience-title">Trainer, Video Editor & Graphic Designer</div>
+            <div class="experience-company">Programmers Point (Affiliated with Affimentus Technology, Indore) – Teaching, video editing, and visual design</div>
+          </div>
+          <div class="experience-item">
+            <div class="experience-year">Jan 2025 - Present</div>
+            <div class="experience-title">Content Creator
+              <span class="youtube-highlight">2K+ Subscribers, 1.7M+ Views</span>
+            </div>
+            <div class="experience-company">Beyond X Canon YouTube Channel – Full video production pipeline</div>
+          </div>
+          <div class="experience-item">
+            <div class="experience-year">Jan 2024 - Present</div>
+            <div class="experience-title">Video Editor & Social Media Manager</div>
+            <div class="experience-company">Programmers College – 700K+ YouTube views, strategic social media management</div>
+          </div>
+          <div class="experience-item">
+            <div class="experience-year">Jan 2021 – Dec 2023</div>
+            <div class="experience-title">Freelance Designer</div>
+            <div class="experience-company">PGTV LLC – Edited 500+ videos, created logos and branding for German entrepreneur</div>
+          </div>
         </div>
         
         <div class="grid-item">
@@ -753,6 +1031,23 @@
         });
         // Set 'All' button to active on initial load
         document.querySelector('.filter-btn').classList.add('active');
+
+        // Scroll-based fade-in animations
+        const observerOptions = {
+          threshold: 0.1,
+          rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+            }
+          });
+        }, observerOptions);
+
+        // Observe all fade-in elements
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
       });
     </script>
 </body>
