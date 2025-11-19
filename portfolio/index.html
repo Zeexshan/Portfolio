@@ -440,11 +440,12 @@
         .stat-card h3 {
             font-size: 2.5em;
             font-weight: 700;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: #303030;
             margin-bottom: 10px;
+        }
+        
+        body.light-mode .stat-card h3 {
+            color: #303030;
         }
 
         .stat-card p {
@@ -479,13 +480,13 @@
         .tech-logo {
             width: 48px;
             height: 48px;
-            filter: grayscale(100%);
-            opacity: 0.7;
+            filter: brightness(0) saturate(100%) invert(15%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(95%) contrast(90%);
+            opacity: 0.8;
             transition: all 0.3s ease;
         }
 
         .tech-item:hover .tech-logo {
-            filter: grayscale(0%);
+            filter: none;
             opacity: 1;
             transform: scale(1.1);
         }
@@ -682,16 +683,8 @@
             <span>Node.js</span>
           </div>
           <div class="tech-item">
-            <img src="https://cdn.simpleicons.org/mongodb" alt="MongoDB" class="tech-logo" />
-            <span>MongoDB</span>
-          </div>
-          <div class="tech-item">
             <img src="https://cdn.simpleicons.org/firebase" alt="Firebase" class="tech-logo" />
             <span>Firebase</span>
-          </div>
-          <div class="tech-item">
-            <img src="https://cdn.simpleicons.org/python" alt="Python" class="tech-logo" />
-            <span>Python</span>
           </div>
           <div class="tech-item">
             <img src="https://cdn.simpleicons.org/java" alt="Java" class="tech-logo" />
@@ -706,19 +699,19 @@
             <span>MySQL</span>
           </div>
           <div class="tech-item">
-            <img src="https://cdn.simpleicons.org/adobephotoshop" alt="Photoshop" class="tech-logo" />
+            <img src="https://cdn.simpleicons.org/adobephotoshop/31A8FF" alt="Photoshop" class="tech-logo" />
             <span>Photoshop</span>
           </div>
           <div class="tech-item">
-            <img src="https://cdn.simpleicons.org/adobeillustrator" alt="Illustrator" class="tech-logo" />
+            <img src="https://cdn.simpleicons.org/adobeillustrator/FF9A00" alt="Illustrator" class="tech-logo" />
             <span>Illustrator</span>
           </div>
           <div class="tech-item">
-            <img src="https://cdn.simpleicons.org/adobeaftereffects" alt="After Effects" class="tech-logo" />
+            <img src="https://cdn.simpleicons.org/adobeaftereffects/9999FF" alt="After Effects" class="tech-logo" />
             <span>After Effects</span>
           </div>
           <div class="tech-item">
-            <img src="https://cdn.simpleicons.org/adobepremierepro" alt="Premiere Pro" class="tech-logo" />
+            <img src="https://cdn.simpleicons.org/adobepremierepro/9999FF" alt="Premiere Pro" class="tech-logo" />
             <span>Premiere Pro</span>
           </div>
           <div class="tech-item">
@@ -775,7 +768,7 @@
           <div class="experience-item">
             <div class="experience-year">Jan 2025 - Present</div>
             <div class="experience-title">Content Creator
-              <span class="youtube-highlight">2K+ Subscribers, 1.7M+ Views</span>
+              <span class="youtube-highlight">2K+ Subs · 1.7M+ Views</span>
             </div>
             <div class="experience-company">Beyond X Canon YouTube Channel – Full video production pipeline</div>
           </div>
